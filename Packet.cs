@@ -86,6 +86,11 @@ namespace PacketNS {
 		public bool isOptional;
 
 		/// <summary>
+		/// The usual quest level based on the average run
+		/// </summary>
+		public int questLevel;
+
+		/// <summary>
 		/// The current state of this quest
 		/// </summary>
 		public QuestStatus status;
