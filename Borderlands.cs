@@ -44,7 +44,7 @@ namespace BL2Quests_Server {
 			string[] lines = File.ReadAllLines(Constants.PATH);
 
 			for (int i = 0; i < lines.Length; i++) {
-				if (string.IsNullOrWhiteSpace(lines[i])) {
+				if (string.IsNullOrWhiteSpace(lines[i]) || lines[i][0] == '#') {
 					continue;
 				}
 				string[] splitLine = lines[i].Split(':');

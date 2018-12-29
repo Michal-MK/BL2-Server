@@ -1,34 +1,34 @@
 0:	Shielded Favors						: Southern shelf	: Hammerlock	: 3		: Gaige : 3
 11:	Assassinate the assassins			: Sanctuary			: Board			: 5		: Axton : 8 
-24:	Claptrap's secret stash				: Sanctuary			: Claptrap		: 7		: Axton : 19
+#24:	Claptrap's secret stash				: Sanctuary			: Claptrap		: 7		: Axton : 19
 1:	In Memoriam							: Sanctuary			: Lilith		: 8		: Axton : 11
 2:	Cult Following						: Sanctuary			: Lilith		: 8		: Axton : 8
 3:	You are Cordially Invited			: Tundra express	: TinyTina		: 8		: Axton : 13
 18:	Mine, all mine!						: Sanctuary			: Lilith		: 9		: Axton : 13
-4:	Stalker of Stalkers					: The Highlands		: Board			: 10	: Axton : -1
+4:	Stalker of Stalkers					: The Highlands		: Board			: 10	: Axton : 16
 5:	The good, the bad and the Mordecai	: Sanctuary			: Board			: 9		: Gaige : 16
 6:	Clan wars							: Sanctuary			: Board			: 11	: Gaige : 16
 7:	Slap Happy							: Sanctuary			: Hammerlock	: 11	: Axton : -1
 8:	Mighty Morphin'						: Sanctuary			: Hammerlock	: 8		: Axton : 13
 9:	Perfectly Peaceful					: Sanctuary			: Hammerlock	: 11	: Axton : 15
-10:	Safe and sound						: Sanctuary			: Marcus		: 11	: Axton : -1
+#10:	Safe and sound						: Sanctuary			: Marcus		: 11	: Axton : -1
 12:	Doctors orders						: Sanctuary			: Tannis		: 11	: Axton : 19
 13:	Hidden journals						: Sanctuary			: Tannis		: 11	: Axton : 16
 14:	Splinter group						: Sanctuary			: Tannis		: 9		: Axton : 13
 15:	Swallowed Whole						: Sanctuary			: Scooter		: 11	: Axton : 17
 16:	The cold shoulder					: Sanctuary			: Scooter		: 11	: Axton : 17
 17:	The Overlooked - Medicine			: Sanctuary			: Scooter		: 11	: Axton : 16
-25:	Claptrap's birthday bash			: Sanctuary			: Claptrap		: 11	: Axton : -1
+#25:	Claptrap's birthday bash			: Sanctuary			: Claptrap		: 11	: Axton : -1
 19:	Rakkoholics anonymous				: Sanctuary			: Mordecai		: 12	: Axton : 19
 20:	Animal rights						: Sanctuary			: Mordecai		: 12	: Axton : 19
 26:	Rocko's modern strife				: Sanctuary			: Brick			: 14	: Axton : 20
-27:	Home movies							: Sanctuary			: Lilith		: 14	: Axton : -1
-28:	This just in						: Sanctuary			: Mordecai		: 17	: Axton : -1
+#27:	Home movies							: Sanctuary			: Lilith		: 14	: Axton : -1
+#28:	This just in						: Sanctuary			: Mordecai		: 17	: Axton : -1
 29:	Capture the flags					: Sanctuary			: Brick			: 17	: Axton : 26
 21:	Bearer of Bad news					: Sanctuary			: Mordecai		: 16	: Axton : 25
 22:	Positive Self image					: The Dust			: Ellie			: 8		: Axton : 24
 23:	Too close for missiles				: The Dust			: Loggins		: 7		: Axton : 24
-30:	Get to know Jack					: Arid nexus		: Board			: 17	: Axton : -1
-31:	Customer service					: Arid nexus		: Board			: 17	: Axton : 25
-32:	To grandma's house we go			: Arid nexus		: Board			: 17	: Axton : 25
-33:	Kill Yourself!						: Arid nexus		: Board			: 17	: Axton : 25
+#30:	Get to know Jack					: Arid nexus		: Board			: 17	: Axton : -1
+#31:	Customer service					: Arid nexus		: Board			: 17	: Axton : 25
+#32:	To grandma's house we go			: Arid nexus		: Board			: 17	: Axton : 25
+#33:	Kill Yourself!						: Arid nexus		: Board			: 17	: Axton : 25
