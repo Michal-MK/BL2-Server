@@ -1,4 +1,5 @@
 ﻿using Igor.TCP;
+using System;
 using System.Threading;
 
 namespace BL2Quests_Server {
@@ -6,12 +7,27 @@ namespace BL2Quests_Server {
 
 		private static ManualResetEventSlim evnt = new ManualResetEventSlim();
 
-		static void Main(string[] args) {
-			new Thread(new ThreadStart(() => {
-				Borderlands bl = new Borderlands();
-			})).Start();
+		private static Borderlands bl;
 
-			evnt.Wait();
+		static void Main(string[] args) {
+			Run();
+
+			while (true) {
+				string s = Console.ReadLine();
+				switch (s) {
+					case "restart": {
+						bl.Restart();
+						break;
+					}
+				}
+			}
+		}
+
+
+		private static void Run() {
+			new Thread(new ThreadStart(() => {
+				bl = new Borderlands();
+			})).Start();
 		}
 	}
 }

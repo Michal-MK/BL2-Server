@@ -31,10 +31,7 @@ namespace BL2Quests_Server {
 			server.OnClientDisconnected += Server_OnClientDisconnected;
 			ParseQuests();
 			server.Start(Constants.PORT);
-			
 		}
-
-		
 
 		private void ParseQuests() {
 			if (!File.Exists(Constants.PATH)) {
@@ -84,6 +81,12 @@ namespace BL2Quests_Server {
 				" Changing status from " + q.status.ToString() + " to " + packet.status.ToString() + "!");
 
 			q.status = packet.status;
+			server.SendToAll(Constants.PROPERTY_SYNC, list.ToArray());
+		}
+
+		internal void Restart() {
+			list.Clear();
+			ParseQuests();
 			server.SendToAll(Constants.PROPERTY_SYNC, list.ToArray());
 		}
 	}
