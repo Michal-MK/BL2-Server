@@ -1,12 +1,12 @@
 0:	Shielded Favors						: Southern shelf	: Hammerlock	: 3		: Gaige : 3
-11:	Assassinate the assassins			: Sanctuary			: Board			: 5		: Axton : 8 
+11:	Assassinate the assassins			: Sanctuary			: Bounty_Board	: 5		: Axton : 8 
 1:	In Memoriam							: Sanctuary			: Lilith		: 8		: Axton : 11
 2:	Cult Following						: Sanctuary			: Lilith		: 8		: Axton : 8
-3:	You are Cordially Invited			: Tundra express	: TinyTina		: 8		: Axton : 13
+3:	You are Cordially Invited			: Tundra express	: Tiny_Tina		: 8		: Axton : 13
 18:	Mine, all mine!						: Sanctuary			: Lilith		: 9		: Axton : 13
-4:	Stalker of Stalkers					: The Highlands		: Board			: 10	: Axton : 16
-5:	The good, the bad and the Mordecai	: Sanctuary			: Board			: 9		: Gaige : 16
-6:	Clan wars							: Sanctuary			: Board			: 11	: Gaige : 16
+4:	Stalker of Stalkers					: The Highlands		: Bounty_Board	: 10	: Axton : 16
+5:	The good, the bad and the Mordecai	: Sanctuary			: Bounty_Board	: 9		: Gaige : 16
+6:	Clan wars							: Sanctuary			: Bounty_Board	: 11	: Gaige : 16
 7:	Slap Happy							: Sanctuary			: Hammerlock	: 11	: Axton : -1
 8:	Mighty Morphin'						: Sanctuary			: Hammerlock	: 8		: Axton : 13
 9:	Perfectly Peaceful					: Sanctuary			: Hammerlock	: 11	: Axton : 15
