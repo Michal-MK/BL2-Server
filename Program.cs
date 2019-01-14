@@ -1,11 +1,10 @@
-﻿using Igor.TCP;
-using System;
+﻿using System;
 using System.Threading;
 
 namespace BL2Quests_Server {
-	public class Program {
+	public class Program  : IDisposable{
 
-		private static ManualResetEventSlim evnt = new ManualResetEventSlim();
+		private static readonly ManualResetEventSlim evnt = new ManualResetEventSlim();
 
 		private static Borderlands bl;
 
@@ -28,6 +27,10 @@ namespace BL2Quests_Server {
 			new Thread(new ThreadStart(() => {
 				bl = new Borderlands();
 			})).Start();
+		}
+
+		public void Dispose() {
+			evnt.Dispose();
 		}
 	}
 }
