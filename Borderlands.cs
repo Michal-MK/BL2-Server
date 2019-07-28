@@ -77,6 +77,9 @@ namespace BL2Quests_Server {
 		}
 
 		internal void Restart() {
+			foreach (TCPClientInfo clientInfo in server.getConnectedClients) {
+				server.GetConnection(clientInfo.clientID).SendData(1);
+			}
 			list.Clear();
 			ParseQuests();
 			server.SendToAll(Constants.PROPERTY_SYNC, list.ToArray());
