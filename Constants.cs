@@ -1,4 +1,4 @@
-﻿namespace PacketNS {
+﻿namespace BL2Quests_Server {
 	/// <summary>
 	/// Various constants used throughout the application
 	/// </summary>

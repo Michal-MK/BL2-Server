@@ -21,8 +21,8 @@
 26:	Rocko's modern strife				: Sanctuary			: Brick			: 14	: Axton : 20
 29:	Capture the flags					: Sanctuary			: Brick			: 17	: Axton : 26
 21:	Bearer of Bad news					: Sanctuary			: Mordecai		: 16	: Axton : 25
-22:	Positive Self image					: The Dust			: Ellie			: 8		: Axton : 24
-23:	Too close for missiles				: The Dust			: Loggins		: 7		: Axton : 24
+22:	Positive Self image					: The Dust			: Ellie			: 16	: Gaige : 24
+23:	Too close for missiles				: The Dust			: Loggins		: 16	: Axton : 24
 #30:	Get to know Jack					: Arid nexus		: Board			: 17	: Axton : -1
 #31:	Customer service					: Arid nexus		: Board			: 17	: Axton : 25
 #32:	To grandma's house we go			: Arid nexus		: Board			: 17	: Axton : 25

@@ -1,5 +1,4 @@
 ﻿using Igor.TCP;
-using PacketNS;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,9 +21,6 @@ namespace BL2Quests_Server {
 		/// </summary>
 		public List<Quest> list { get; set; } = new List<Quest>();
 
-		/// <summary>
-		/// Default constructor
-		/// </summary>
 		public Borderlands() {
 			server = new TCPServer(new ServerConfiguration());
 			server.OnConnectionEstablished += Server_OnConnectionEstablished;
@@ -41,27 +37,29 @@ namespace BL2Quests_Server {
 			string[] lines = File.ReadAllLines(Constants.PATH);
 
 			for (int i = 0; i < lines.Length; i++) {
-				if (string.IsNullOrWhiteSpace(lines[i]) || lines[i][0] == '#') {
+				if (string.IsNullOrWhiteSpace(lines[i]) || lines[i].StartsWith("#")) {
 					continue;
 				}
+
 				string[] splitLine = lines[i].Split(':');
-				Quest q = new Quest();
-				q.questID = int.Parse(splitLine[0].Trim());
-				q.questName = splitLine[1].Trim();
-				q.acceptingLocation = splitLine[2].Trim();
-				q.givenBy = splitLine[3].Trim();
-				q.availableSince = int.Parse(splitLine[4].Trim());
-				q.acceptedBy = (Player)Enum.Parse(typeof(Player),splitLine[5].Trim());
-				q.questLevel = int.Parse(splitLine[6].Trim()); 
+				Quest q = new Quest {
+					QuestID = int.Parse(splitLine[0].Trim()),
+					QuestName = splitLine[1].Trim(),
+					AcceptingLocation = splitLine[2].Trim(),
+					GivenBy = splitLine[3].Trim(),
+					AvailableSince = int.Parse(splitLine[4].Trim()),
+					AcceptedBy = (PlayerCharacter)Enum.Parse(typeof(PlayerCharacter), splitLine[5].Trim()),
+					QuestLevel = int.Parse(splitLine[6].Trim())
+				};
 				list.Add(q);
 			}
 		}
 
 		private async void Server_OnConnectionEstablished(object sender, ClientConnectedEventArgs e) {
-			e.myServer.GetConnection(e.clientInfo.clientID).dataIDs.DefineCustomDataTypeForID<Packet>(Constants.PACKET_ID, OnPacketReceived);
-			e.myServer.GetConnection(e.clientInfo.clientID).dataIDs.DefineCustomDataTypeForID<Quest[]>(Constants.PROPERTY_SYNC, OnDataReceived);
+			TCPConnection connection = e.myServer.GetConnection(e.clientInfo.clientID);
+			connection.dataIDs.DefineCustomDataTypeForID<Packet>(Constants.PACKET_ID, OnPacketReceived);
 			await Task.Delay(400);
-			e.myServer.GetConnection(e.clientInfo.clientID).SendData(Constants.PROPERTY_SYNC, SimpleTCPHelper.GetBytesFromObject(list.ToArray()));
+			connection.SendData(Constants.PROPERTY_SYNC, SimpleTCPHelper.GetBytesFromObject(list.ToArray()));
 			Console.WriteLine(e.clientInfo.computerName + "(" + e.clientInfo.clientID + ")" + " " + e.clientInfo.clientAddress);
 		}
 
@@ -69,18 +67,12 @@ namespace BL2Quests_Server {
 			Console.WriteLine(e.clientID + "Disconnected");
 		}
 
-		private void OnDataReceived(Quest[] arg1, byte arg2) {
-			throw new NotImplementedException("Unexpected message!");
-		}
-
 		private void OnPacketReceived(Packet packet, byte senderID) {
-			Quest q = list.Where((Quest other) => { return other.questID == packet.questID; }).First();
+			Quest q = list.Where(other => other.QuestID == packet.QuestID).First();
 			if (q == null) return;
 
-			Console.WriteLine("Received packet for modification of " + q.questName + "." +
-				" Changing status from " + q.status.ToString() + " to " + packet.status.ToString() + "!");
-
-			q.status = packet.status;
+			Console.WriteLine($"{q.QuestName} change {q.Status.ToString()} -> {packet.Status.ToString()}");
+			q.Status = packet.Status;
 			server.SendToAll(Constants.PROPERTY_SYNC, list.ToArray());
 		}
 

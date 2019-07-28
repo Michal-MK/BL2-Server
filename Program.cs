@@ -1,13 +1,10 @@
-﻿using Igor.TCP;
-using System;
+﻿using System;
 using System.Threading;
 
 namespace BL2Quests_Server {
 	public class Program {
 
-		private static ManualResetEventSlim evnt = new ManualResetEventSlim();
-
-		private static Borderlands bl;
+		private static Borderlands instance;
 
 		static void Main(string[] args) {
 			Run();
@@ -16,17 +13,16 @@ namespace BL2Quests_Server {
 				string s = Console.ReadLine();
 				switch (s) {
 					case "restart": {
-						bl.Restart();
+						instance.Restart();
 						break;
 					}
 				}
 			}
 		}
 
-
 		private static void Run() {
 			new Thread(new ThreadStart(() => {
-				bl = new Borderlands();
+				instance = new Borderlands();
 			})).Start();
 		}
 	}
